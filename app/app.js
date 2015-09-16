@@ -3,10 +3,11 @@
 // Declare app level module which depends on views, and components
 angular.module('myApp', [
     'ngRoute'
-]).
-//angular.module('myApp.categories', ['ngRoute']);
-
-    config(['$routeProvider', function($routeProvider) {
+])
+    .constant('config', {
+        apiUrl: 'http://ad-board-clusterpoint-server/'
+    })
+    .config(['$routeProvider', function($routeProvider) {
         $routeProvider.
             when('/add', {
                 templateUrl: 'partials/add.html',
@@ -20,7 +21,7 @@ angular.module('myApp', [
                 templateUrl: 'partials/search.html',
                 controller: 'SearchCtrl'
             }).
-            when('/categories/:categoryId', {
+            when('/category/:categoryId', {
                 templateUrl: 'partials/category.html',
                 controller: 'CategoryCtrl'
             }).
