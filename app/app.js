@@ -2,7 +2,8 @@
 
 // Declare app level module which depends on views, and components
 angular.module('myApp', [
-    'ngRoute'
+    'ngRoute',
+    'ui.bootstrap'
 ])
     .constant('config', {
         apiUrl: 'http://ad-board-clusterpoint-server/'
@@ -25,9 +26,13 @@ angular.module('myApp', [
                 templateUrl: 'partials/category.html',
                 controller: 'CategoryCtrl'
             }).
-            otherwise({
+            when('/', {
                 templateUrl: 'partials/categories.html',
                 controller: 'CategoriesCtrl',
-            });
+            })
+            /*otherwise({
+                templateUrl: 'partials/categories.html',
+                controller: 'CategoriesCtrl',
+            });*/
         //$routeProvider.otherwise({redirectTo: '/categories'});
     }]);

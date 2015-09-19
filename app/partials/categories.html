@@ -1,7 +1,8 @@
-<p>This is the partial for show categories.</p>
-
-<ul class="categories">
-    <li ng-repeat="category in categories">
-        <a href="#/category/{{category.id}}" title="{{category.name}}">{{category.name}}</a>
-    </li>
-</ul>
+<div class="categories">
+    <h3 class="categories__title">Category list</h3>
+    <ul class="categories__list list-unstyled">
+        <li ng-repeat="category in categories">
+            <a href="#/category/{{category.id}}" title="{{category.name}}">{{category.name}}</a>
+        </li>
+    </ul>
+</div>
