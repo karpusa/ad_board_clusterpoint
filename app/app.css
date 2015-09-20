@@ -3,3 +3,12 @@
 .categories__list {
   margin-left: 20px;
 }
+.ad-add {
+    max-width: 640px;
+}
+.ad-add .add-add__message {
+    height: 100px;
+}
+.ad-add__alert {
+    margin-top: 10px;
+}

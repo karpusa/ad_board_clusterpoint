@@ -5,26 +5,40 @@
     </div>
   </script>
     <h3 class="ad-add__title">Add ad</h3>
-    <form name="formAd" class="simple-form">
+    <form name="formAd" class="simple-form" ng-submit="add()">
         <div class="form-group">
             <label for="title">Title:</label>
-            <input class="form-control" type="text" id="title" ng-model="ad.title" />
+            <input class="form-control" name="title" type="text" id="title" ng-model="ad.title" required/>
+            <div ng-show="formAd.$submitted || formAd.title.$touched">
+                <alert class="ad-add__alert" ng-show="!formAd.title.$valid" template-url="alert.html">Invalid title!</alert>
+            </div>
         </div>
         <div class="form-group">
             <label for="message">Ad text:</label>
-            <textarea class="form-control" id="message" ng-model="ad.message"></textarea>
+            <textarea class="form-control add-add__message" name="message" id="message" ng-model="ad.message" required></textarea>
+            <div ng-show="formAd.$submitted || formAd.message.$touched">
+                <alert class="ad-add__alert" ng-show="!formAd.message.$valid" template-url="alert.html">Invalid message!</alert>
+            </div>
         </div>
         <div class="form-group">
             <label for="price">Price:</label>
-            <input class="form-control" type="number" id="price" name="price" ng-model="ad.price" ng-pattern="/^[0-9]+(\.[0-9]{1,2})?$/" step="0.01" />
-            <alert ng-show="!formAd.price.$valid" template-url="alert.html">Invalid price!</alert>
+            <div class="input-group">
+            <div class="input-group-addon">€</div>
+                <input class="form-control" type="number" name="price" id="price" ng-model="ad.price" ng-pattern="/^[0-9]+(\.[0-9]{1,2})?$/" step="0.01" required/>
+            </div>
+            <div ng-show="formAd.$submitted || formAd.price.$touched">
+                <alert class="ad-add__alert" ng-show="!formAd.price.$valid" template-url="alert.html">Invalid price!</alert>
+            </div>
         </div>
         <div class="form-group">
-            <label for="categories">Category:</label>
-            <select class="form-control" name="categories" id="categories" ng-options="item.name for item in ad.categories track by item.id" ng-model="ad.categorySelected">
-            <option value=''>- Please Choose -</option>
+            <label for="category">Category:</label>
+            <select class="form-control" name="category" id="category" ng-options="item.name for item in ad.categories track by item.id" ng-model="ad.categorySelected" required>
+                <option value=''>- Please Choose -</option>
             </select>
+            <div ng-show="formAd.$submitted || formAd.category.$touched">
+                <alert class="ad-add__alert" ng-show="!formAd.category.$valid" template-url="alert.html">Invalid category!</alert>
+            </div>
         </div>
-        <input class="btn" type="submit" ng-click="add(ad)" value="Save" />
+        <input class="btn" type="submit" value="Save" />
     </form>
 </div>
