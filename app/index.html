@@ -19,7 +19,7 @@
 <body>
   <div class="container">
     <div class="page-header">
-      <h1>Ad board</h1>
+      <h1 class="page-header__title">Ad board</h1> <a href="#/" title="homepage" ng-show="isnothome" class="link-homepage ng-hide">to homepage</a>
     </div>
     <a href="#/add" class="btn btn-default active" role="button" ng-hide="isformad">Add ad</a>
     <div ng-view></div>
@@ -32,7 +32,7 @@
   <script src="bower_components/angular-route/angular-route.js"></script>
   <script src="bower_components/angular-bootstrap/ui-bootstrap.js"></script>
   <script src="app.js"></script>
-  <script src="ad/categories.controller.js"></script>
+  <script src="ad/home.controller.js"></script>
   <script src="ad/category.controller.js"></script>
   <script src="ad/add.controller.js"></script>
 </body>

@@ -1,8 +1,23 @@
 <div class="category">
     <h3 class="category__title">Category {{category.name}}</h3>
-    <ul class="ad-list list-unstyled">
-<!--         <li ng-repeat="category in categories">
-            <a href="#/category/{{category.id}}" title="{{category.name}}">{{category.name}}</a>
-        </li> -->
-    </ul>
+    <table ng-show="showresult" class="table ad-list ng-hide">
+        <tr>
+            <th>Title</th>
+            <th>Text</th>
+            <th>Price</th>
+        </tr>
+        <tr ng-repeat="ad in ads">
+            <td>
+                <a href="#/ad/{{ad.id}}" title="{{ad.title}}">{{ad.title}}</a>
+            </td>
+            <td>
+                {{ad.message}}
+            </td>
+            <td>
+                {{ad.price}}
+            </td>
+        </tr>
+    </table>
+    <p ng-show="!showresult" class="ng-hide">No records!</p>
+
 </div>

@@ -2,7 +2,7 @@
     <h3 class="categories__title">Category list</h3>
     <ul class="categories__list list-unstyled">
         <li ng-repeat="category in categories">
-            <a href="#/category/{{category.id}}" title="{{category.name}}">{{category.name}}</a>
+            <a href="#/category/{{category.id}}" title="{{category.name}}">{{category.name}}</a> ({{category.count}})
         </li>
     </ul>
 </div>

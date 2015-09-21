@@ -1,7 +1,13 @@
 /* app css stylesheet */
 
+.page-header__title {
+    display: inline;
+}
+.link-homepage {
+    margin-left: 18px;
+}
 .categories__list {
-  margin-left: 20px;
+    margin-left: 20px;
 }
 .ad-add {
     max-width: 640px;

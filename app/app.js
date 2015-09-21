@@ -14,7 +14,7 @@ angular.module('myApp', [
                 templateUrl: 'ad/add.html',
                 controller: 'AddCtrl'
             }).
-            when('/view/:adId', {
+            when('/ad/:adId', {
                 templateUrl: 'ad/ad.html',
                 controller: 'AdCtrl'
             }).
@@ -27,15 +27,19 @@ angular.module('myApp', [
                 controller: 'CategoryCtrl'
             }).
             when('/', {
-                templateUrl: 'ad/categories.html',
-                controller: 'CategoriesCtrl',
+                templateUrl: 'ad/home.html',
+                controller: 'HomeCtrl',
             })
-            /*otherwise({
-                templateUrl: 'partials/categories.html',
-                controller: 'CategoriesCtrl',
-            });*/
-        //$routeProvider.otherwise({redirectTo: '/categories'});
     }])
+    .run(function($rootScope, $location ) {
+        $rootScope.isHomePage = function() {
+          if ($location.path() === '/') {
+            $rootScope.isnothome = false;
+          } else {
+            $rootScope.isnothome = true;
+          }
+        };
+    })
     .config(['$httpProvider', function($httpProvider) {
       $httpProvider.defaults.headers.post['Content-Type'] = 'application/x-www-form-urlencoded;charset=utf-8';
 

@@ -7,6 +7,7 @@ angular
 function AddCtrl($rootScope, $scope, $http, config) {
     var ad = this;
 
+    $rootScope.isHomePage();
     $rootScope.isformad = true;
     $http.get(config.apiUrl+'?q=categories').success(function(data) {
         $scope.ad={
