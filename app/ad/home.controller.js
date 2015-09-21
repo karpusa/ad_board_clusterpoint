@@ -5,7 +5,7 @@ angular
     .controller('HomeCtrl', HomeCtrl);
 
 function HomeCtrl($scope, $http, $rootScope, config) {
-    $rootScope.isHomePage();
+    $rootScope.isElementsHide();
     $http.get(config.apiUrl+'?q=categorieswithcount').success(function(data) {
         $scope.categories = data;
     });

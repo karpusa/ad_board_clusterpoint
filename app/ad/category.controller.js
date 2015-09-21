@@ -5,7 +5,7 @@ angular
     .controller('CategoryCtrl', CategoryCtrl);
 
 function CategoryCtrl($scope, $http, $routeParams, $location, $rootScope, config) {
-    $rootScope.isHomePage();
+    $rootScope.isElementsHide();
     $http.get(config.apiUrl+'?q=category&id='+$routeParams.categoryId+'&r='+new Date().getTime()).success(function(data) {
         if (!data.success) {
             $location.path("/");

@@ -18,10 +18,9 @@
 </head>
 <body>
   <div class="container">
-    <div class="page-header">
-      <h1 class="page-header__title">Ad board</h1> <a href="#/" title="homepage" ng-show="isnothome" class="link-homepage ng-hide">to homepage</a>
-    </div>
-    <a href="#/add" class="btn btn-default active" role="button" ng-hide="isformad">Add ad</a>
+    <ng-include src="'layout/header.html'"></ng-include>
+    <ng-include src="'layout/search.html'"></ng-include>
+    <ng-include src="'layout/addadbutton.html'"></ng-include>
     <div ng-view></div>
   </div>
 

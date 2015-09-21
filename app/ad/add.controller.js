@@ -4,11 +4,11 @@ angular
     .module('myApp')
     .controller('AddCtrl', AddCtrl);
 
-function AddCtrl($rootScope, $scope, $http, config) {
+function AddCtrl($rootScope, $scope, $http, $location, config) {
     var ad = this;
 
-    $rootScope.isHomePage();
-    $rootScope.isformad = true;
+    $rootScope.isElementsHide();
+
     $http.get(config.apiUrl+'?q=categories').success(function(data) {
         $scope.ad={
             categories: data,
@@ -28,10 +28,8 @@ function AddCtrl($rootScope, $scope, $http, config) {
                         },
         })
         .success(function(data) {
-
         if (data.success) {
-            alert('success');
-            //@TODO redirect to ad post
+            $location.path('/ad/'+data.id);
         }
 
         });

@@ -7,8 +7,8 @@ angular
 function AdCtrl($rootScope, $scope, $http, $routeParams, config) {
     var ad = this;
 
-    $rootScope.isHomePage();
-    $rootScope.isformad = true;
+    $rootScope.isElementsHide();
+
     $http.get(config.apiUrl+'?q=ad&id='+$routeParams.adId+'&r='+new Date().getTime()).success(function(data) {
         if (!data.success) {
             $location.path("/");

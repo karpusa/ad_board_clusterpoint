@@ -32,11 +32,16 @@ angular.module('myApp', [
             })
     }])
     .run(function($rootScope, $location ) {
-        $rootScope.isHomePage = function() {
+        $rootScope.isElementsHide = function() {
           if ($location.path() === '/') {
             $rootScope.isnothome = false;
           } else {
             $rootScope.isnothome = true;
+          }
+          if ($location.path() === '/add') {
+            $rootScope.isformad = true;
+          } else {
+            $rootScope.isformad = false;
           }
         };
     })
