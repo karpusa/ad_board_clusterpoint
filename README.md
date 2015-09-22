@@ -1,4 +1,4 @@
-Ad board with NOSQL Clustepoint
+Ad board with NOSQL Clusterpoint
 
 ### Run the Application
 
@@ -22,7 +22,7 @@ For minify js and css run:
 
 ` gulp dist
 
-Files compile to folder 'dist'
+Files compile to folder 'dist', and copy html templates.
 
 ### Demo client side
 
