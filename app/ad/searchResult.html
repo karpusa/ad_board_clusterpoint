@@ -1,0 +1,8 @@
+<div class="search-result">
+    <h3>You search for {{searchTerm}}</h3>
+        <div ng-repeat="result in results">
+            <h4>{{$index + 1}}. {{result.title}}</h4>
+            <p>{{result.message}}</p>
+        </div>
+    <p ng-show="shownorecords" class="ng-hide">No records!</p>
+</div>

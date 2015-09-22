@@ -19,11 +19,11 @@ function CategoryCtrl($scope, $http, $routeParams, $location, $rootScope, config
             $scope.ads = data.result;
             if (data.result.length===0) {
                 $scope.showresult = false;
+                $scope.shownorecords = true;
             } else {
                 $scope.showresult = true;
+                $scope.shownorecords = false;
             }
         }
-    }).error(function(data, status) {
-       // $location.path("/");
     });
 }

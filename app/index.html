@@ -1,8 +1,5 @@
 <!DOCTYPE html>
-<!--[if lt IE 7]>      <html lang="en" ng-app="myApp" class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
-<!--[if IE 7]>         <html lang="en" ng-app="myApp" class="no-js lt-ie9 lt-ie8"> <![endif]-->
-<!--[if IE 8]>         <html lang="en" ng-app="myApp" class="no-js lt-ie9"> <![endif]-->
-<!--[if gt IE 8]><!--> <html lang="en" ng-app="myApp" class="no-js"> <!--<![endif]-->
+<html lang="en" ng-app="myApp">
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -14,13 +11,12 @@
   <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.min.css">
   <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap-theme.min.css">
   <link rel="stylesheet" href="app.css">
-  <script src="bower_components/html5-boilerplate/dist/js/vendor/modernizr-2.8.3.min.js"></script>
 </head>
 <body>
   <div class="container">
-    <ng-include src="'layout/header.html'"></ng-include>
-    <ng-include src="'layout/search.html'"></ng-include>
-    <ng-include src="'layout/addadbutton.html'"></ng-include>
+    <ng-include src="'partial/header.html'"></ng-include>
+    <ng-include src="'partial/searchBar.html'" ng-controller="SearchBarCtrl"></ng-include>
+    <ng-include src="'partial/addadbutton.html'"></ng-include>
     <div ng-view></div>
   </div>
 
@@ -35,5 +31,7 @@
   <script src="ad/category.controller.js"></script>
   <script src="ad/ad.controller.js"></script>
   <script src="ad/add.controller.js"></script>
+  <script src="ad/searchResult.controller.js"></script>
+  <script src="partial/searchBar.controller.js"></script>
 </body>
 </html>

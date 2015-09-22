@@ -5,9 +5,11 @@ angular.module('myApp', [
     'ngRoute',
     'ui.bootstrap'
 ])
+    //Link to PHP API for request
     .constant('config', {
         apiUrl: 'http://ad-board-clusterpoint-server/'
     })
+    //Route
     .config(['$routeProvider', function($routeProvider) {
         $routeProvider.
             when('/add', {
@@ -18,9 +20,9 @@ angular.module('myApp', [
                 templateUrl: 'ad/ad.html',
                 controller: 'AdCtrl'
             }).
-            when('/search/:query', {
-                templateUrl: 'ad/search.html',
-                controller: 'SearchCtrl'
+            when('/search', {
+                templateUrl: 'ad/searchResult.html',
+                controller: 'SearchResultCtrl'
             }).
             when('/category/:categoryId', {
                 templateUrl: 'ad/category.html',
@@ -31,6 +33,7 @@ angular.module('myApp', [
                 controller: 'HomeCtrl',
             })
     }])
+    //Hide link to homepage and button 'Add ad' when on form add ad
     .run(function($rootScope, $location ) {
         $rootScope.isElementsHide = function() {
           if ($location.path() === '/') {
@@ -45,6 +48,7 @@ angular.module('myApp', [
           }
         };
     })
+    //$http param data added support array
     .config(['$httpProvider', function($httpProvider) {
       $httpProvider.defaults.headers.post['Content-Type'] = 'application/x-www-form-urlencoded;charset=utf-8';
 
