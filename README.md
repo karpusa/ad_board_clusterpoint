@@ -20,7 +20,7 @@ PHP server API https://github.com/karpusa/ad_board_clusterpoint_server
 
 For minify js and css run:
 
-` gulp dist
+`gulp dist`
 
 Files compile to folder 'dist', and copy html templates.
 
