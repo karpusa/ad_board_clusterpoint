@@ -1,10 +1,7 @@
 {
-  "name": "angular-seed",
-  "description": "A starter project for AngularJS",
-  "version": "0.0.0",
-  "homepage": "https://github.com/angular/angular-seed",
-  "license": "MIT",
-  "private": true,
+  "name": "ad-board-client",
+  "description": "Ad board client with NOSQL Clusterpoint",
+  "version": "1.0.0",
   "dependencies": {
     "angular": "~1.4.0",
     "angular-route": "~1.4.0",
